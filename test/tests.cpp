@@ -19,9 +19,9 @@ TEST(Test2, second_test) {
 
 TEST(Test3, third_test) {
     Text_Gen textgen;
-    textgen.Prefixes("one two three four five six", 1);
+    textgen.Prefixes("one two three four five two six", 1);
     prefix pref = { "one" };
-    std::vector<std::string> suffix = { "three", "five" };
+    std::vector<std::string> suffix = { "three", "six" };
     EXPECT_EQ(suffix, textgen.get().at(pref));
 }
 
