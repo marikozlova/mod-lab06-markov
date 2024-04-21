@@ -1,3 +1,4 @@
+// Copyright [year] <Copyright Owner>
 #include "textgen.h"
 #include <random>
 #include <sstream>
