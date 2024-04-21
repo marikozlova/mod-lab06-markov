@@ -2,7 +2,7 @@
 #include <gtest/gtest.h>
 
 #include "../include/textgen.h"
-TEST(Test1) {
+TEST(Test1, first_test) {
     TextGen textgen;
     textgen.Prefixes("One two three", 2);
     std::map<prefix, std::vector<std::string>> statetab = textgen.get();
@@ -10,14 +10,14 @@ TEST(Test1) {
   EXPECT_EQ(pref, statetab.begin()->first);
 }
 
-TEST(Test2) {
+TEST(Test2, second_test) {
     TextGen textgen;
     textgen.Prefixes("One two three", 2);
     prefix prefix = { "One", "two" };
     EXPECT_EQ(textgen.get().at(prefix)[0], "three");
 }
 
-TEST(Test3) {
+TEST(Test3, third_test) {
     TextGen textgen;
     textgen.Prefixes("one two three four five six", 1);
     prefix pref = { "one" };
@@ -25,7 +25,7 @@ TEST(Test3) {
     EXPECT_EQ(suffix, textgen.get().at(pref));
 }
 
-TEST(Test4) {
+TEST(Test4, fourth_test) {
     TextGen textgen;
     textgen.Prefixes("one two three four five six", 1);
     std::string generated_string = textgen.Text(time(0), 5);
